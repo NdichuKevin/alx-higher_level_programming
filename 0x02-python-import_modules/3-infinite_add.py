@@ -1,13 +1,17 @@
 #!/usr/bin/python3
-import hidden_4
-
-
-def discovr():
-    name = dir(hidden_4)
-    for i in name:
-        if i[:2] != '__':
-            print("{:s}".format(i))
-
+def add_arg(argv):
+    n = len(argv) - 1
+    if n == 0:
+        print("{:d}".format(n))
+        return
+    else:
+        i = 1
+        add = 0
+        while i <= n:
+            add += int(argv[i])
+            i += 1
+        print("{:d}".format(add))
 
 if __name__ == "__main__":
-    discovr()
+    import sys
+    add_arg(sys.argv)
